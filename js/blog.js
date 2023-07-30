@@ -1,4 +1,4 @@
-const blogUrl = `https://fakestoreapi.com/products`
+const blogUrl = `https://64a6fca7096b3f0fcc80ef97.mockapi.io/posts`
 const post = document.querySelector('.post')
 const crud__form = document.querySelector('.crud__form')
 
@@ -6,30 +6,30 @@ async function blogFun() {
     const reespose = await fetch(blogUrl);
     const data = await reespose.json();
     // console.log(data.slice(0, 9));
-    data.slice(0, 9).map((el) => {
+    // data.slice(0, 9).map((el) => {
 
-        const blogCard = document.createElement('div')
-        const img = document.createElement('img')
-        const title = document.createElement('h5');
-        const id = document.createElement('h1')
-        const Dbtn = document.createElement('button');
-        const Edit = document.createElement('button');
-        const par = document.createElement('p')
+    //     const blogCard = document.createElement('div')
+    //     const img = document.createElement('img')
+    //     const title = document.createElement('h5');
+    //     const id = document.createElement('h1')
+    //     const Dbtn = document.createElement('button');
+    //     const Edit = document.createElement('button');
+    //     const par = document.createElement('p')
 
-        blogCard.setAttribute('data-id', `${el.id}`)
-        blogCard.classList.add('col-6', 'col-sm-6', 'col-lg-3', 'justify-content-sm-center', 'cartt', 'card', 'm-5', 'm-sm-0', 'mb-5')
-        title.classList.add('w-100',)
-        Dbtn.className = 'delete text-white border-0 bg-danger';
-        Edit.className = 'edit text-white border-0 bg-primary mb-1'
-        img.src = el.image
-        id.textContent = el.id
-        title.textContent = el.title.slice(0, 30)
-        par.textContent = el.description.slice(0, 50)
-        Dbtn.textContent = 'Delete';
-        Edit.textContent = 'Edit'
-        blogCard.append(img, id, title, par, Edit, Dbtn)
-        post.appendChild(blogCard)
-    })
+    //     blogCard.setAttribute('data-id', `${el.id}`)
+    //     blogCard.classList.add('col-6', 'col-sm-6', 'col-lg-3', 'justify-content-sm-center', 'cartt', 'card', 'm-5', 'm-sm-0', 'mb-5')
+    //     title.classList.add('w-100',)
+    //     Dbtn.className = 'delete text-white border-0 bg-danger';
+    //     Edit.className = 'edit text-white border-0 bg-primary mb-1'
+    //     img.src = el.image
+    //     id.textContent = el.id
+    //     title.textContent = el.title.slice(0, 30)
+    //     par.textContent = el.description.slice(0, 50)
+    //     Dbtn.textContent = 'Delete';
+    //     Edit.textContent = 'Edit'
+    //     blogCard.append(img, id, title, par, Edit, Dbtn)
+    //     post.appendChild(blogCard)
+    // })
 }
 
 blogFun()
